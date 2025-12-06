@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Google Images</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo">
+      <span class="c1">G</span><span class="c2">o</span><span class="c3">o</span>
+      <span class="c4">b</span><span class="c5">l</span><span class="c6">e</span>
+    </div>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search images..." />
+    </div>
+
+    <div class="profile"></div>
+  </header>
+
+  <!-- NAV TABS -->
+  <nav class="tabs">
+    <div class="tab">AI Mode</div>
+    <div class="tab">All</div>
+    <div class="tab active">Images</div>
+    <div class="tab">Videos</div>
+    <div class="tab">News</div>
+    <div class="tab">Products</div>
+    <div class="tab">Short videos</div>
+    <div class="tab">More</div>
+  </nav>
+
+  <!-- IMAGE GRID -->
+  <section class="image-grid" id="image-grid">
+    <!-- Bilder werden hier dynamisch geladen -->
+  </section>
+
+  <!-- DYNAMISCHES BILD-ARRAY -->
+  <script>
+    const images = [
+       "images/Jack2.jpeg",
+    "images/Jack3.jpeg",
+    "images/Jack6.jpg",
+    "images/Monsterfoto 2025-12-05 um 12.24.48.png",
+    "images/Monsterfoto 2025-12-05 um 12.25.15.png",
+    "images/Monsterfoto 2025-12-05 um 12.25.31.png",
+    "images/Monsterfoto 2025-12-05 um 12.25.46.png",
+    "images/Monsterfoto 2025-12-05 um 12.25.59.png",
+    "images/Monsterfoto 2025-12-05 um 12.26.11.png",
+    "images/Monsterfoto 2025-12-05 um 12.28.50.png",
+    "images/Monsterfoto 2025-12-05 um 12.28.58.png",
+    "images/Monsterfoto 2025-12-05 um 12.29.20.png",
+    "images/Monsterfoto 2025-12-05 um 12.29.32.png",
+    "images/Monsterfoto 2025-12-05 um 12.29.46.png",
+    "images/Monsterfoto 2025-12-05 um 12.29.59.png",
+    "images/Monsterfoto 2025-12-05 um 12.30.23.png",
+    "images/Monsterfoto 2025-12-05 um 12.30.57.png",
+    "images/Monsterfoto 2025-12-05 um 12.31.08.png",
+    "images/Monsterfoto 2025-12-05 um 12.31.21.png",
+    "images/daniel1.jpeg",
+    "images/daniel2.jpeg",
+    "images/daniel3.jpeg",
+    "images/daniel4.jpg",
+    "images/daniel5.jpg",
+    "images/daniel6.jpg",
+    "images/daniel7.jpeg",
+    "images/extra1.jpeg",
+    "images/extra2.jpeg",
+    "images/extra3.jpeg",
+    "images/extra4.jpeg",
+    "images/extra5.jpeg",
+    "images/extra6.jpeg",
+    "images/extra7.jpeg",
+    "images/jack1.jpeg",
+    "images/jack4.jpeg",
+    "images/jack5.jpeg",
+    "images/selin1.jpeg",
+    "images/selin2.jpg",
+    "images/selin3.jpeg",
+    "images/selin4.jpeg",
+    "images/selin5.jpeg",
+    "images/selin6.jpeg",
+    "images/selin7.jpeg",
+    "images/selin8.jpg"
+    ];
+
+     // SHUFFLE Funktion
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Array mischen
+  const shuffledImages = shuffle(images);
+
+  // Grid befüllen
+  const grid = document.getElementById('image-grid');
+  shuffledImages.forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'img-card';
+    const img = document.createElement('img');
+    img.src = src;
+    div.appendChild(img);
+    grid.appendChild(div);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta name="robots" content="noindex,nofollow"><script id="grecaptchav3" defer="" src="https://www.google.com/recaptcha/enterprise.js?render=6LdF0XglAAAAADPibhFsu6w6oyx-6TEnyCChDHty"></script><script>
+						function grecaptcha_ready(cb) {
+							if (typeof grecaptcha === 'undefined') {
+								document.getElementById('grecaptchav3').addEventListener('load', async ev => {
+									grecaptcha.enterprise.ready(cb);
+								});
+							} else {
+								grecaptcha.enterprise.ready(cb);
+							}
+						}
+					</script><style>.grecaptcha-badge {visibility:hidden;}</style></head><body><script type="module">
+			import * as bd from "https://cdn0.rubylane.com/0/botd.js?cachever=744e0221e0";
+
+			let gtoken = null;
+			let collected = null;
+
+			grecaptcha_ready(async () => {
+				async function botd() {
+					let botd		= await bd.load({monitoring: false});
+					collected		= await botd.collect();
+
+					collected.verdict		= await botd.detect();
+					collected.errorTrace	= undefined;
+					collected.enginekind	= collected.browserEngineKind;
+					collected.browserkind	= collected.browserKind;
+					collected.tok			= "_mDwtmodqeV1bSkhJT/YXJMZCX7iwtdwyFvUUW4fra4Q6rbmmyTDB34VCQdkFG7XzdrnpE7XCgYM36OO1IolfGg==";
+				}
+
+				async function gr() {
+					gtoken = await grecaptcha.enterprise.execute("6LdF0XglAAAAADPibhFsu6w6oyx-6TEnyCChDHty", {action: "new_session"});
+				}
+
+				await Promise.all([botd(), gr()]);
+
+				const resp = await fetch('/_cr', {
+					method:		'POST',
+					headers:	{'Content-Type': 'application/json'},
+					body:		JSON.stringify({
+						action:				"new_session",
+						recaptcha_token:	gtoken,
+						req_context:		"_ZwQBSDj4UWPVqq/29um4XNLo6lfy+r4yFR7OP8pVrgUNoCR3HhiGEC/l90ODdryLiJlmTxXUDQDwcUMcIOyuBIALnZD9e/bR+8pDUykQSgH7BDu97qKnOfkBV5C6KxC1YAcbZ4tgFsxSGHl4gSpW7aRbgRyg5IrjqyYgYb7A7J6kO/+7PrE4vt3PWmxNokqrJJL8eKfQeJD3IlmNIT/HdwgBiqIziEjuCa5LSUI8G3rczmRPg0Mh/iOGzus/l9yTXYR5Tn0qDYU5n3xzZb9GWHzkbEARjexaeVa2EGAdoWSbbx3RngEsU/etj60ik2+1CnP8VgqezceHFvRqYONmZCQa2SZL4iNwVUzOVB6mrCrkffmN+36OO+SESXA3Bljsi8yQy1DNidZA6FgnSFEHE5giEi4zde1MhGU2SEbnDootS6PSU0p6C4lhzRvaTiRH10E3vKLVWpCo7xV+rWSWAm4Fjwzjl1kaQTb/SThC+P8cvowLDp96AerWgWpw+hFmlIw3aTU91cOHLM2LepTaRt9D2/4nTa/6DB0K3O5ZyXhHeGBKze1ASoaBPgTCR11s/1JUDWTzTqgwON8JcDpvxk1DSWNaRGjovgKhjR3b6Ami6V4mgu1SlBtwUMdVd6dYa51+vKFT7IZ5ea5DuHLntmS8F7OII/FueTIF3/8zJUZ49rAIQTDKC8yB5+qdAPr/OMu3LvyEVM3LADC2KiUKeasoriMBr+WvpGzH29aHd3LdeXYc6Kip13uOtLh2o6qBx8QkKSodanOo+ERBeOf2qDru1GuEgoxGGU8OkVvRlg3hhbFKqSYRjQ/LBtkzJwlFqqfX8evUbCXwy6eyQHRMfutDRVZbI2EIKz+YBACpf2OpzbrNNWgaXAchmxIcsTKn/ZXBTUOly2Q8bnFQ3ugR7n95To99BWyVU/Nye61UT26ry8AKO3tUtf3ZimPM1UfG36j8v5FYvYPb66omNhXAE7r4JZvViimwIbvjTMUlAa0JVRSuU+h0/HHO47w2QRI1q+l2f/Pv0RSR1fesArJ7WCanxgM1vUG00ciFK+LKZ1dvFg4HeHJOPA==",
+						botd:				collected
+					})
+				});
+				if (resp.ok) document.location = await resp.text();
+			});
+		</script><noscript>We're sorry, but Javascript must be enabled to use this site</noscript></body></html>

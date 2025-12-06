@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #333;
+}
+
+/* TOP BAR ------------------------------------------------------------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5a7de1; /* custom safe blue */
+    user-select: none;
+}
+
+.logo span {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+}
+
+/* CUSTOM COLORS (safe, not Google's palette) */
+.c1 { color: #5A7DE1; }  /* soft blue */
+.c2 { color: #E1685A; }  /* coral red */
+.c3 { color: #F0C75E; }  /* warm yellow */
+.c4 { color: #5BC686; }  /* mint green */
+.c5 { color: #6B5AE1; }  /* violet */
+.c6 { color: #E15A9E; }  /* pink */
+
+.search-container {
+    flex: 1;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 45px 10px 45px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #b4c8ff;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.search-icon { left: 15px; }
+.mic-icon { right: 60px; }
+.camera-icon { right: 20px; }
+
+/* Profile circle */
+.profile {
+    width: 36px;
+    height: 36px;
+    background: #bbb;
+    border-radius: 50%;
+}
+
+/* NAV TABS ------------------------------------------------------------- */
+
+.tabs {
+    display: flex;
+    gap: 25px;
+    padding: 10px 25px;
+    font-size: 14px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding-bottom: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    opacity: 1;
+    font-weight: bold;
+    border-bottom-color: #5a7de1;
+}
+
+/* BUBBLE CATEGORIES ----------------------------------------------------- */
+
+.categories {
+    display: flex;
+    gap: 10px;
+    padding: 10px 25px;
+    overflow-x: auto;
+}
+
+.bubble {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* IMAGE GRID ----------------------------------------------------------- */
+
+.image-grid {
+    padding: 20px 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.img-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.img-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: 0.18s ease;
+}
+
+.img-card img:hover {
+    transform: scale(1.02);
+}
