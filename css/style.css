@@ -38,7 +38,7 @@ body {
 .c6 { color: #E15A9E; }  /* pink */
 
 .search-container {
-    flex: 1;
+    flex: 0.75;
     position: relative;
 }
 
@@ -146,3 +146,41 @@ body {
 .img-card img:hover {
     transform: scale(1.02);
 }
+
+.img-card.selected {
+  border: 3px solid #4caf50;
+}
+
+#confirmBtn {
+    position: fixed;      /* fixiert Button relativ zum Viewport */
+    bottom: 20px;         /* Abstand vom unteren Rand */
+    right: 20px;          /* Abstand vom rechten Rand */
+    padding: 10px 25px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    opacity: 0.5;
+    pointer-events: none;
+    background: white;
+    z-index: 100;         /* über Bilder legen */
+}
+
+#confirmBtn.active {
+    opacity: 1;
+    pointer-events: auto;
+    background: rgb(71, 151, 71);
+    color: white;
+}
+
+#success {
+    position: fixed;          /* fixiert es relativ zum Viewport */
+    top: 20%;              /* 20% vom unteren Rand, kannst anpassen */
+    left: 50%;                /* horizontal zentrieren */
+    transform: translateX(-50%); /* exakte horizontale Zentrierung */
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
